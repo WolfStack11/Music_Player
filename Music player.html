@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="radial-gradient background">
+        <div class="content">
+            <div class="top-bar">
+                <span class="material-icons">
+                    keyboard_arrow_down
+                </span>
+                <span>Now Playing</span>
+                <span class="material-icons">
+                    more_horiz
+                </span>
+            </div>
+            <div class="image-wrapper">
+                <div class="music-image">
+                    <img src="Img/img1.jpg" alt="">
+                </div>
+            </div>
+            <div class="music-titles">
+                <p class="name">6 Shots</p>
+                <p class="artist">NEFFEX</p>
+            </div>
+            <div class="progress-details">
+                <div class="progress-bar">
+                    <span></span>
+                </div>
+                <div class="time">
+                    <span class="current">0:00</span>
+                    <span class="final">5:30</span>
+                </div>
+            </div>
+
+            <div class="volume-details">
+                <span class="material-icons">volume_down</span>
+                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <span class="material-icons">volume_up</span>
+            </div>
+
+            <div class="control-btn">
+                <span class="material-icons" id="repeat">repeat</span>
+                <span class="material-icons" id="prev">skip_previous</span>
+                <div class="play-pause">
+                    <span class="material-icons">play_arrow</span>
+                </div>
+                <span class="material-icons" id="next">skip_next</span>
+                <span class="material-icons" id="shuffle">shuffle</span>
+            </div>
+
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+    </div>
+
+    <audio src="Music/NEFFEX - 6 Shots.mp3" class="main-song"></audio>
+
+    <script src="/js/playlist.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
