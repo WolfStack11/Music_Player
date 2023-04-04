@@ -15,11 +15,16 @@ shuffleBtn = content.querySelector("#shuffle");
 let wave = document.getElementById('wave');
 let volume_slider = document.querySelector('.volume_slider');
 
-
+let colorCount =0;
 let index = 1;
 
 window.addEventListener("load", () => {
     loadData(index);
+});
+
+
+nextBtn.addEventListener("click", ()=>{
+    random_bg_color();
 });
 
 function loadData(indexValue){
@@ -27,7 +32,7 @@ function loadData(indexValue){
     musicArtist.innerHTML = songs[indexValue - 1].artist;
     Playimage.src = "Img/"+songs[indexValue - 1].img+".jpg";
     Audio.src = "Music/"+songs[indexValue - 1].audio+".mp3";
-    random_bg_color();
+  //  random_bg_color();
 }
 
 
@@ -48,8 +53,17 @@ function random_bg_color(){
     let Color2 = populate('#');
     var angle = 'to right';
 
-    let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
-    document.body.style.background = gradient;
+    let gradient = 'linear-gradien(' + angle + ',' + Color1 + ', ' + Color2 + ")";
+    
+    let colors =["red", "green", "blue"];
+    if(colorCount<3){
+      document.body.style.backgroundColor = colors[colorCount];
+       colorCount++;
+     }
+     else{
+        colorCount=0;
+     }
+    
 }
 
 
