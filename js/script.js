@@ -15,16 +15,11 @@ shuffleBtn = content.querySelector("#shuffle");
 let wave = document.getElementById('wave');
 let volume_slider = document.querySelector('.volume_slider');
 
-let colorCount =0;
+let colorCount = 0;
 let index = 1;
 
 window.addEventListener("load", () => {
     loadData(index);
-});
-
-
-nextBtn.addEventListener("click", ()=>{
-    random_bg_color();
 });
 
 function loadData(indexValue){
@@ -32,31 +27,32 @@ function loadData(indexValue){
     musicArtist.innerHTML = songs[indexValue - 1].artist;
     Playimage.src = "Img/"+songs[indexValue - 1].img+".jpg";
     Audio.src = "Music/"+songs[indexValue - 1].audio+".mp3";
-  //  random_bg_color();
+    random_bg_color()
 }
 
 
 // BACKGROUND
 function random_bg_color(){
-    let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
-    let a;
+    // let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
+    // let a;
 
-    function populate(a){
-        for(let i=0; i<6; i++){
-            let x = Math.round(Math.random() * 14);
-            let y = hex[x];
-            a += y;
-        }
-        return a;
-    }
-    let Color1 = populate('#');
-    let Color2 = populate('#');
-    var angle = 'to right';
+    // function populate(a){
+    //     for(let i=0; i<6; i++){
+    //         let x = Math.round(Math.random() * 14);
+    //         let y = hex[x];
+    //         a += y;
+    //     }
+    //     return a;
+    // }
+    // let Color1 = populate('#');
+    // let Color2 = populate('#');
+    // var angle = 'to right';
 
-    let gradient = 'linear-gradien(' + angle + ',' + Color1 + ', ' + Color2 + ")";
+    // let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ')';
+    // document.body.style.backgroundColor = gradient;
     
-    let colors =["red", "green", "blue"];
-    if(colorCount<3){
+    let colors =["#404E5C", "#92BCEA", "#171A21", "#153B50", "#016FB9", "#182825", "#003554", "#3F2E56", "#0E3B43", "#226F54"];
+    if(colorCount<9){
       document.body.style.backgroundColor = colors[colorCount];
        colorCount++;
      }
@@ -96,10 +92,12 @@ function pauseSong(){
 // NEXT - PREV BUTTON
 nextBtn.addEventListener("click", () => {
     nextSong();
+    random_bg_color()
 });
 
 prevBtn.addEventListener("click", () => {
     prevSong();
+    random_bg_color()
 });
 
 function nextSong(){

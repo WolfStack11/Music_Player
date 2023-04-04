@@ -8,8 +8,7 @@
 .radial-gradient {
     height: 100vh;
     width: 100%;
-     /* background-color: #e3def7;  */
-    /* background: radial-gradient( at center, #118032, #161616); */
+    /* background-color: #e3def7;  */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,6 +175,7 @@
     align-items: center;
     justify-content: center;
     color: #4d4d4d;
+    user-select: none;
 }
 
 .control-btn span:active {
